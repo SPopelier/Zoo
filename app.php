@@ -1,24 +1,28 @@
 <?php
 
-use LDAP\Result;
-require __DIR__ . '/vender/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
-abstract class Animal {
+$animals = [
+    new \App\Animals\Fish("bubulle"),
+    new \App\Animals\BubbleFish("bubbles"),
+    new \App\Animals\CatFish("MiaouFish"),
+    new \App\Animals\ClownFish("LolFish"),
+    new \App\Animals\Zebra("BlackAndWhite"),
+    new \App\Animals\Whale("BigBro"),
+    new \App\Animals\Elephant("Bobs"),
+    new \App\Animals\Parrot("CocoLoco"),
+    new \App\Animals\Dove("Peace"),
+    new \App\Animals\Duck("Daffy"),
 
-    private string $name;
+];
 
-    public function getName() : string {
-        return $this->name;
-    }
 
-    public function __construct(string $name) {
-        $this->name = $name;
-    }
-
-    abstract protected function getNoise();
-
-    public function noise() {
-        return $this->getNoise();
-    }
+foreach($animals as $animal) {
+    //echo $animal-> getName();
+    echo $animal-> noise();
 }
+
+
+
+
 
