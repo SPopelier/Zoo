@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Animals;
-//use \App\Animal;
+use App\Interfaces\CanSwim;
+
  
-class Fish extends \App\Animal
+class Fish extends \App\Animal implements CanSwim
 {
     protected function getNoise():string
     {

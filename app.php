@@ -1,5 +1,11 @@
 <?php
 
+use App\Animals\BubbleFish;
+use App\Animals\Elephant;
+use App\Animals\Fish;
+use App\Animals\Parrot;
+use App\Zoo;
+
 require __DIR__ . '/vendor/autoload.php';
 
 $animals = [
@@ -18,11 +24,23 @@ $animals = [
 
 
 foreach($animals as $animal) {
+    $enclos = new \App\Enclosure();
+
+    $enclos ->addAnimal($animal);
+   // echo $enclos;
     //echo $animal-> getName();
-    echo $animal-> noise();
+   //echo $animal-> noise();
+
+echo Zoo::addAnimal($animal);
 }
 
+Zoo::visitTheZoo();
 
 
+/*$monElephant = new \App\Animals\Elephant("Babar");
 
+$enclos ->addAnimal($monElephant);
+$enclos ->addAnimal(new Parrot("Coco"));
 
+echo $enclos;
+*/

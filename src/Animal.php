@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 abstract class Animal {
 
     private string $name;
@@ -17,6 +18,6 @@ abstract class Animal {
     abstract protected function getNoise();
 
     public function noise() {
-       echo $this->name . "A DIT " , $this->getNoise(). "\n";
+       return $this->name . " A DIT " . $this->getNoise(). "\n";
     }
 }
